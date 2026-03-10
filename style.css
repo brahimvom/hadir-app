@@ -38,18 +38,59 @@ body {
     align-items: center;
 }
 
-.scanner-card {
-    background: var(--card);
-    padding: 20px;
-    border-radius: 24px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    text-align: center;
-    border: 1px solid rgba(255,255,255,0.05);
+.scanner-wrapper {
+    position: relative;
+    width: 320px;
+    margin: 20px auto;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 2px solid rgba(46, 204, 113, 0.3);
+    box-shadow: 0 0 25px rgba(46, 204, 113, 0.1);
 }
 
+
 #reader {
-    width: 100% !important;
     border: none !important;
-    border-radius: 15px;
-    overflow: hidden;
+    background: #000 !important;
+}
+
+
+#reader button {
+    background: #2ecc71 !important;
+    color: white !important;
+    border: none !important;
+    padding: 12px 25px !important;
+    border-radius: 10px !important;
+    font-family: 'Cairo', sans-serif !important;
+    font-weight: bold !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 15px auto !important;
+    display: block !important;
+}
+
+#reader button:hover {
+    background: #27ae60 !important;
+    box-shadow: 0 0 15px rgba(46, 204, 113, 0.5);
+}
+
+
+.scan-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #2ecc71;
+    box-shadow: 0 0 15px #2ecc71;
+    z-index: 10;
+    animation: scan-animation 2s infinite linear;
+    pointer-events: none; 
+}
+
+@keyframes scan-animation {
+    0% { top: 0%; }
+    100% { top: 100%; }
 }
