@@ -16,4 +16,13 @@ let html5QrcodeScanner = new Html5QrcodeScanner("reader", config, false);
 // تشغيل الكاميرا مع معالجة الخطأ
 html5QrcodeScanner.render(onScanSuccess, (err) => {
     // هاد السطر كيتجاهل الأخطاء البسيطة ديال "مالقيتش كود" باش ما يتبلوكاش
+
+const html5QrcodeScanner = new Html5QrcodeScanner(
+    "reader", 
+    { 
+        fps: 20, 
+        qrbox: { width: 200, height: 200 }, // المربع الوسطاني
+        aspectRatio: 1.0
+    }
+);
 });
